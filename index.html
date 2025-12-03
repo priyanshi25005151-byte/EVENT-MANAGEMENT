@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stellar Events — Event Management</title>
+  <style>
+    /* Basic CSS using only padding, margin, color and simple layout rules */
+    :root{
+      --accent:#2b6cb0;
+      --muted:#6b7280;
+      --bg:#f7fafc;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
+      background-color:var(--bg);
+      color:#111827;
+      line-height:1.4;
+    }
+
+    header{
+      background-color:var(--accent);
+      color:white;
+      padding:24px 16px;
+      margin-bottom:20px;
+    }
+    .container{max-width:1000px;margin:0 auto;padding:0 16px}
+
+    .brand{font-size:22px;margin:0}
+    .hero{
+      background:linear-gradient(90deg, rgba(43,108,176,0.95), rgba(43,108,176,0.85));
+      color:white;
+      padding:36px 16px;
+      margin-bottom:18px;
+    }
+    .hero h1{margin:0 0 8px 0}
+    .hero p{margin:0}
+
+    /* layout for main sections */
+    .grid{display:flex;gap:18px}
+    .col{flex:1}
+
+    /* Event cards */
+    .events{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+    .card{
+      background:var(--card);
+      padding:14px;
+      margin:0;
+      border-radius:8px;
+      box-shadow:0 1px 3px rgba(0,0,0,0.06);
+      min-width:260px;
+      flex:1 1 300px;
+    }
+    .card h3{margin:0 0 8px 0}
+    .meta{color:var(--muted);margin-bottom:8px}
+    .btn{
+      display:inline-block;padding:8px 12px;border-radius:6px;text-decoration:none;color:white;background-color:var(--accent);margin-top:8px
+    }
+
+    /* Booking form - basic */
+    form{background:var(--card);padding:14px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+    label{display:block;margin:8px 0 6px 0;color:var(--muted)}
+    input[type="text"], input[type="email"], input[type="date"], select, textarea{
+      width:100%;padding:8px;margin:0 0 8px 0;border:1px solid #e5e7eb;border-radius:6px
+    }
+    textarea{min-height:90px}
+
+    /* Testimonials */
+    .testimonials{margin:18px 0}
+    .testimonial{background:var(--card);padding:12px;margin:8px 0;border-radius:8px}
+    .author{font-weight:600;margin-top:8px}
+
+    footer{padding:14px 0;color:var(--muted);text-align:center;margin-top:28px}
+
+    /* Responsive tweaks */
+    @media (max-width:800px){
+      .grid{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="brand">Stellar Events</h1>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>We plan. You celebrate.</h1>
+      <p>Full-service event management for weddings, corporate events, parties and community gatherings.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section>
+      <h2 style="margin:0 0 12px 0">Upcoming Events</h2>
+      <div class="events">
+        <article class="card">
+          <h3>Riverside Wedding</h3>
+          <div class="meta">Sat, Dec 6, 2025 • 150 guests • Riverside Lawn</div>
+          <p>Elegant outdoor wedding coordination including catering, decor, and live music.</p>
+          <a class="btn" href="#booking">Book</a>
+        </article>
+
+        <article class="card">
+          <h3>Annual Tech Summit</h3>
+          <div class="meta">Tue, Jan 20, 2026 • 500 attendees • Downtown Convention Center</div>
+          <p>Full AV, speaker management, exhibitor booths, and attendee registration support.</p>
+          <a class="btn" href="#booking">Book</a>
+        </article>
+
+        <article class="card">
+          <h3>Birthday Bash — 30th</h3>
+          <div class="meta">Fri, Nov 28, 2025 • 80 guests • Rooftop Lounge</div>
+          <p>Theme design, DJ, photo booth, and customised menu planning.</p>
+          <a class="btn" href="#booking">Book</a>
+        </article>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="col">
+        <section id="booking">
+          <h2 style="margin:0 0 12px 0">Booking Information</h2>
+          <p style="margin:0 0 12px 0;color:var(--muted)">Fill the form below or email us at <strong>hello@stellarevents.example</strong>. We will follow up within 48 hours.</p>
+
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your full name">
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com">
+
+            <label for="event-type">Event type</label>
+            <select id="event-type">
+              <option>Wedding</option>
+              <option>Corporate</option>
+              <option>Birthday / Private Party</option>
+              <option>Community / Other</option>
+            </select>
+
+            <label for="date">Preferred date</label>
+            <input id="date" type="date">
+
+            <label for="details">Brief details</label>
+            <textarea id="details" placeholder="Tell us about your event (guest count, style, budget, special requests)"></textarea>
+
+            <a class="btn" href="#" onclick="alert('This is a static demo. Replace with real submission code when ready.');return false;">Submit Booking</a>
+          </form>
+        </section>
+      </div>
+
+      <div class="col">
+        <section>
+          <h2 style="margin:0 0 12px 0">Testimonials</h2>
+          <div class="testimonials">
+            <div class="testimonial">
+              <p>"Stellar Events
+                </p>
+                </div>
+                </div>
+                </section>
+                </div>
+            </body>
+            </html>
